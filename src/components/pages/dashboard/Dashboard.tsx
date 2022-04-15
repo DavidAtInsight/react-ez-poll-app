@@ -1,24 +1,15 @@
 import './Dashboard.css'
 
+import CreatePoll from '../../UI/organisms/create-poll/CreatePoll';
 import MyPolls from '../../UI/organisms/my-polls/MyPolls';
 
-import { Button } from 'antd';
-import { AppstoreAddOutlined } from '@ant-design/icons';
-
 const Dashboard = () => {
-  return (
-    <div className="dashboard">
-        <Button  
-            icon={<AppstoreAddOutlined />}
-            key="1"
-            size="large"
-            type="primary"     
-        >
-            Create New Poll
-        </Button>  
-        <MyPolls />
-    </div>
-  )
+    return (
+        <div className="dashboard-wrapper">
+            <CreatePoll /> 
+            <MyPolls />
+        </div>
+    )
 }
 
 export default Dashboard

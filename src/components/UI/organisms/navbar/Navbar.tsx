@@ -31,11 +31,7 @@ const Navbar = () => {
             ]}
             subTitle={width > 729 ? "Polling made easy." : ""}
             title={<Link to="/">
-                        <Title 
-                            level={2}
-                        >
-                            <Logo />
-                        </Title>
+                        <Title level={2}><Logo /></Title>
                     </Link>}
         />
     )

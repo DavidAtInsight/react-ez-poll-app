@@ -3,10 +3,11 @@ import './MyPolls.css'
 import IPoll from '../../../../interfaces/IPoll';
 import PollCard from '../../molecules/pollCard/PollCard';
 
-import { Divider, Space } from 'antd';
+import { Divider, Typography } from 'antd';
 
 const MyPolls = () => {
-    let polls: IPoll[] = [
+    let { Title } = Typography;
+    let polls: IPoll[] = [ //temporary
         {
             id: 'd01ddcd6-10bd-4215-99c4-90ed3a11e4a1',
             userId: 'e2afcaca-923c-4b90-b38a-519663edb6b4',
@@ -183,12 +184,15 @@ const MyPolls = () => {
 
     return (
         <div className="my-polls-wrapper">
-            <Divider>My Polls</Divider>
-            <div className="poll-cards-wrapper">
-                {polls.map((poll) => ( 
-                    <PollCard key={poll.id} poll={poll}/>
-                ))}
-            </div>
+            <Divider>{<Title level={3}>My Polls</Title>}</Divider>
+            {polls.length > 0 ? 
+              <div className="poll-cards-wrapper">
+                  {polls.map((poll) => ( 
+                      <PollCard key={poll.id} poll={poll}/>
+                  ))}
+              </div> :
+              <h3 className="no-polls-message">You have not created any polls yet...</h3>
+            }
         </div>
     )
 }

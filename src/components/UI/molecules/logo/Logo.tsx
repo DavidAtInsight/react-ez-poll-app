@@ -1,8 +1,10 @@
+import './Logo.css'
+
 import { CheckCircleOutlined} from '@ant-design/icons';
 
 const Logo = () => {
   return (
-    <i><sup>{<CheckCircleOutlined />}</sup>EzPoll</i>
+    <span className="logo"><i><sup>{<CheckCircleOutlined />}</sup>EzPoll</i></span>
   )
 }
 

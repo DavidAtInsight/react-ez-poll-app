@@ -1,6 +1,6 @@
 import './Navbar.css';
 
-import Logo from '../../atoms/logo/Logo';
+import Logo from '../../molecules/logo/Logo';
 
 import { Button, PageHeader, Typography } from 'antd';
 import { LoginOutlined, LogoutOutlined } from '@ant-design/icons';
@@ -27,6 +27,7 @@ const Navbar = () => {
                     {isAuth ? <span>Logout</span> : <span>Login</span>}
                 </Button>    
             ]}
+            subTitle="Polling made easy." //TODO -- remove when screen size below 767px
             title={<Link to="/">
                         <Title 
                             level={2}

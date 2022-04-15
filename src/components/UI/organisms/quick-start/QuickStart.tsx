@@ -1,8 +1,9 @@
 import './QuickStart.css';
 
-import Logo from '../../atoms/logo/Logo';
+import Logo from '../../molecules/logo/Logo';
 
 import { Button, Card, Divider, Typography } from 'antd';
+import { Link } from 'react-router-dom'
 
 const { Title } = Typography;
 
@@ -18,20 +19,22 @@ const QuickStart = () => {
                         Start Using {<Logo />} Today! {/*Does NOT WRAP*/}
                     </Title>}
         >
-            <Button  
-                block
-                size="large"
-                type="primary" 
-            >
-              Create Poll Now!
-            </Button> 
+            <Link to="dashboard" >
+                <Button  
+                    block
+                    size="large"
+                    type="primary" 
+                >
+                  Create Poll Now!
+                </Button> 
+            </Link>
             <Divider> OR </Divider>
             <Button  
                 block
                 size="large"
                 type="primary" 
             >
-              Join Poll Now!
+              Take Poll Now!
             </Button> 
         </Card>
     )

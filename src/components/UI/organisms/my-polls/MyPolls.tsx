@@ -1,85 +1,196 @@
-import { Divider, Space, Table, Tag } from 'antd';
+import './MyPolls.css'
 
-const columns = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    //render: text => <a>{text}</a>,
-  },
-  {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-  },
-  {
-    title: 'Tags',
-    key: 'tags',
-    dataIndex: 'tags',
-    // render: tags => (
-    //   <>
-    //     {tags.map(tag => {
-    //       let color = tag.length > 5 ? 'geekblue' : 'green';
-    //       if (tag === 'loser') {
-    //         color = 'volcano';
-    //       }
-    //       return (
-    //         <Tag color={color} key={tag}>
-    //           {tag.toUpperCase()}
-    //         </Tag>
-    //       );
-    //     })}
-    //   </>
-    // ),
-  },
-  {
-    title: 'Action',
-    key: 'action',
-    // render: (text, record) => (
-    //   <Space size="middle">
-    //     <a>Invite {record.name}</a>
-    //     <a>Delete</a>
-    //   </Space>
-    // ),
-  },
-];
+import IPoll from '../../../../interfaces/IPoll';
+import PollCard from '../../molecules/pollCard/PollCard';
 
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-];
+import { Divider, Space } from 'antd';
 
 const MyPolls = () => {
-  return (
-    <div className="my-polls">
-      <Divider>My Polls</Divider>
-      <Table columns={columns} dataSource={data} />
-    </div>
-  )
+    let polls: IPoll[] = [
+        {
+            id: 'd01ddcd6-10bd-4215-99c4-90ed3a11e4a1',
+            userId: 'e2afcaca-923c-4b90-b38a-519663edb6b4',
+            name: 'Test Poll',
+            description: 'A test poll to test functionality...',
+            isOpen: true,
+            isPublic: true,
+            questions: [
+                {
+                    id: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                    pollId: 'd01ddcd6-10bd-4215-99c4-90ed3a11e4a1trings',
+                    text: 'What is 2 + 2?',
+                    options: [
+                        {
+                            questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                            text: '1',
+                            value: 1
+                        },
+                        {
+                            questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                            text: '2',
+                            value: 3
+                        },
+                        {
+                            questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                            text: '3',
+                            value: 3
+                        },
+                        {
+                            questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                            text: '4',
+                            value: 4
+                        }
+                    ],
+                    responses: [
+                        {
+                            questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                            selectedValue: 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 'd01ddcd6-10bd-4215-99c4-90ed3a11e4a5',
+            userId: 'e2afcaca-923c-4b90-b38a-519663edb6b4',
+            name: 'Test Poll',
+            description: 'A test poll to test functionality...',
+            isOpen: false,
+            isPublic: true,
+            questions: [
+                {
+                    id: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                    pollId: 'd01ddcd6-10bd-4215-99c4-90ed3a11e4a1trings',
+                    text: 'What is 2 + 2?',
+                    options: [
+                        {
+                            questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                            text: '1',
+                            value: 1
+                        },
+                        {
+                            questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                            text: '2',
+                            value: 3
+                        },
+                        {
+                            questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                            text: '3',
+                            value: 3
+                        },
+                        {
+                            questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                            text: '4',
+                            value: 4
+                        }
+                    ],
+                    responses: [
+                        {
+                            questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                            selectedValue: 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+          id: 'd01ddcd6-10bd-4215-99c4-90ed3a11e4a6',
+          userId: 'e2afcaca-923c-4b90-b38a-519663edb6b4',
+          name: 'Test Poll',
+          description: 'A test poll to test functionality...',
+          isOpen: true,
+          isPublic: false,
+          questions: [
+              {
+                  id: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                  pollId: 'd01ddcd6-10bd-4215-99c4-90ed3a11e4a1trings',
+                  text: 'What is 2 + 2?',
+                  options: [
+                      {
+                          questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                          text: '1',
+                          value: 1
+                      },
+                      {
+                          questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                          text: '2',
+                          value: 3
+                      },
+                      {
+                          questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                          text: '3',
+                          value: 3
+                      },
+                      {
+                          questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                          text: '4',
+                          value: 4
+                      }
+                  ],
+                  responses: [
+                      {
+                          questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                          selectedValue: 4
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+        id: 'd01ddcd6-10bd-4215-99c4-90ed3a11e4a7',
+        userId: 'e2afcaca-923c-4b90-b38a-519663edb6b5',
+        name: 'Test Poll',
+        description: 'A test poll to test functionality...',
+        isOpen: false,
+        isPublic: false,
+        questions: [
+            {
+                id: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                pollId: 'd01ddcd6-10bd-4215-99c4-90ed3a11e4a1trings',
+                text: 'What is 2 + 2?',
+                options: [
+                    {
+                        questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                        text: '1',
+                        value: 1
+                    },
+                    {
+                        questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                        text: '2',
+                        value: 3
+                    },
+                    {
+                        questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                        text: '3',
+                        value: 3
+                    },
+                    {
+                        questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                        text: '4',
+                        value: 4
+                    }
+                ],
+                responses: [
+                    {
+                        questionId: '332f06ed-acca-4fc0-aed5-60657ad78501',
+                        selectedValue: 4
+                    }
+                ]
+            }
+        ]
+    }
+    ];
+
+    return (
+        <div className="my-polls-wrapper">
+            <Divider>My Polls</Divider>
+            <div className="poll-cards-wrapper">
+                {polls.map((poll) => ( 
+                    <PollCard key={poll.id} poll={poll}/>
+                ))}
+            </div>
+        </div>
+    )
 }
 
 export default MyPolls

@@ -5,9 +5,9 @@ import Logo from '../../molecules/logo/Logo';
 import { Button, Card, Divider, Typography } from 'antd';
 import { Link } from 'react-router-dom'
 
-const { Title } = Typography;
-
 const QuickStart = () => {
+    let { Title } = Typography;
+
     return (
         <Card 
             className="quick-start-card"

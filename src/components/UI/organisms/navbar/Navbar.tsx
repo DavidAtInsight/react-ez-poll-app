@@ -2,16 +2,18 @@ import './Navbar.css';
 
 import Logo from '../../molecules/logo/Logo';
 
+import useWindowDimensions from '../../../../custom-hooks/useWindowDimension';
+
 import { Button, PageHeader, Typography } from 'antd';
 import { LoginOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom'
 
 //pass in auth boolean to display login or profile menu.item
 
-const { Title } = Typography;
-
 const Navbar = () => {
-    const isAuth: boolean = false; //temporary
+    let { Title } = Typography;
+    let { width } = useWindowDimensions()
+    let isAuth: boolean = false; //temporary
 
     //add click method here to handle clicks
 
@@ -27,7 +29,7 @@ const Navbar = () => {
                     {isAuth ? <span>Logout</span> : <span>Login</span>}
                 </Button>    
             ]}
-            subTitle="Polling made easy." //TODO -- remove when screen size below 767px
+            subTitle={width > 729 ? "Polling made easy." : ""}
             title={<Link to="/">
                         <Title 
                             level={2}

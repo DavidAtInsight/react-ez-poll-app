@@ -1,0 +1,9 @@
+.my-polls-wrapper {
+    margin-top: 3%;
+}
+
+.poll-cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

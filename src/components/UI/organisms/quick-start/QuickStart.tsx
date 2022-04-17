@@ -16,7 +16,7 @@ const QuickStart = () => {
                         level={2}
                         ellipsis
                     >
-                        Start Using {<Logo />} Today! {/*Does NOT WRAP*/}
+                        Start using {<Logo />} today! {/*Does NOT WRAP*/}
                     </Title>}
         >
             <Link to="dashboard" >

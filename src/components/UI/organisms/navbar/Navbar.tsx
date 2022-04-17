@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
     let { Title } = Typography;
     let { width } = useWindowDimensions()
-    let isAuth: boolean = false; //temporary
+    let isAuth: boolean = true; //temporary
 
     //add click method here to handle clicks
 

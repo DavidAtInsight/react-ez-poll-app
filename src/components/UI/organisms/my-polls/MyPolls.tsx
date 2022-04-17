@@ -1,7 +1,7 @@
 import './MyPolls.css'
 
 import IPoll from '../../../../interfaces/IPoll';
-import PollCard from '../../molecules/pollCard/PollCard';
+import PollCard from '../../molecules/poll-card/PollCard';
 
 import { Divider, Typography } from 'antd';
 
